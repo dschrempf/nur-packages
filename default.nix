@@ -22,7 +22,7 @@
   tracer = pkgs.callPackage ./pkgs/evolution/tracer { };
 
   # # Misc.
-  # biblib = pkgs.callPackage ./pkgs/misc/biblib { python = pkgs.python3; };
+  biblib = pkgs.callPackage ./pkgs/misc/biblib { };
   r2frida = pkgs.callPackage ./pkgs/misc/r2frida { };
   vimiv-qt = pkgs.callPackage ./pkgs/misc/vimiv-qt { };
 }
