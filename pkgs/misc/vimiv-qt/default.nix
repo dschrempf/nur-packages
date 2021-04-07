@@ -41,7 +41,7 @@ buildPythonApplication rec {
   meta = with lib; {
     description = "";
     license = licenses.gpl3Plus;
-    homepage = "https://github.com/${src.owner}/${pname}";
+    homepage = "https://github.com/karlch/vimiv-qt";
     maintainers = let dschrempf = import ../../dschrempf.nix; in [ dschrempf ];
     platforms = platforms.all;
   };

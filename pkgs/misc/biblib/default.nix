@@ -15,7 +15,7 @@ python.pkgs.buildPythonPackage rec {
 
   meta = {
     description = "Parser for BibTeX bibliographic databases";
-    homepage = "https://github.com/${src.owner}/${pname}";
+    homepage = "https://github.com/colour-science/biblib";
     license = [ lib.licenses.mit ];
     maintainers = let dschrempf = import ../../dschrempf.nix; in [ dschrempf ];
   };
