@@ -23,6 +23,6 @@
 
   # Misc.
   biblib = pkgs.callPackage ./pkgs/misc/biblib { };
-  # r2frida = pkgs.callPackage ./pkgs/misc/r2frida { };
+  r2frida = pkgs.callPackage ./pkgs/misc/r2frida { };
   vimv-qt = pkgs.callPackage ./pkgs/misc/vimv-qt { };
 }
