@@ -24,5 +24,5 @@
   # # Misc.
   # biblib = pkgs.callPackage ./pkgs/misc/biblib { python = pkgs.python3; };
   r2frida = pkgs.callPackage ./pkgs/misc/r2frida { };
-  # vimiv-qt = pkgs.callPackage ./pkgs/misc/vimiv-qt { };
+  vimiv-qt = pkgs.callPackage ./pkgs/misc/vimiv-qt { };
 }

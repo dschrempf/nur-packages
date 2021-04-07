@@ -1,10 +1,10 @@
 { stdenv,
   lib,
   fetchFromGitHub,
-  python3Packages,
+  python39Packages,
   qt5 }:
 
-with python3Packages;
+with python39Packages;
 buildPythonApplication rec {
   pname = "vimiv-qt";
   version = "0.8.0";
