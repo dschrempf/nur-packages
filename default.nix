@@ -17,7 +17,7 @@
   # Evolution.
   beast = pkgs.callPackage ./pkgs/evolution/beast { };
   beast2 = pkgs.callPackage ./pkgs/evolution/beast2 { };
-  # figtree = pkgs.callPackage ./pkgs/evolution/figtree { };
+  figtree = pkgs.callPackage ./pkgs/evolution/figtree { };
   # iqtree2 = pkgs.callPackage ./pkgs/evolution/iqtree2 { };
   # tracer = pkgs.callPackage ./pkgs/evolution/tracer { };
 
