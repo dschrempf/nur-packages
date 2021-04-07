@@ -11,6 +11,7 @@
 , radare2
 , wget }:
 
+# TODO: This is broken.
 stdenv.mkDerivation rec {
   pname = "r2frida";
   version = "5.1.3";
@@ -33,6 +34,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
+    broken = true;
     description = "Radare2 and Frida better together";
     license = licenses.mit;
     homepage = "https://github.com/nowsecure/r2frida";
