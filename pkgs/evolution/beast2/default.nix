@@ -30,8 +30,6 @@ stdenv.mkDerivation {
     ant linux
   '';
 
-  # TODO: BEAGLE.
-
   # TODO: Beauti does not work because it does not find the templates. See the
   # 'release/Linux/beast' directory.
 

@@ -11,7 +11,6 @@
 , radare2
 , wget }:
 
-# TODO: This is broken.
 stdenv.mkDerivation rec {
   pname = "r2frida";
   version = "5.1.3";

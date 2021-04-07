@@ -28,7 +28,6 @@ stdenv.mkDerivation {
     ant linux
   '';
 
-  # TODO: BEAGLE.
   installPhase = ''
     # Libraries.
     mkdir -p $out/lib
