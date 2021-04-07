@@ -14,8 +14,8 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  # # Evolution.
-  # beast = pkgs.callPackage ./pkgs/evolution/beast { };
+  # Evolution.
+  beast = pkgs.callPackage ./pkgs/evolution/beast { };
   # beast2 = pkgs.callPackage ./pkgs/evolution/beast2 { };
   # figtree = pkgs.callPackage ./pkgs/evolution/figtree { };
   # iqtree2 = pkgs.callPackage ./pkgs/evolution/iqtree2 { };
