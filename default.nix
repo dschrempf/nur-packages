@@ -21,7 +21,7 @@
   iqtree2 = pkgs.callPackage ./pkgs/evolution/iqtree2 { };
   tracer = pkgs.callPackage ./pkgs/evolution/tracer { };
 
-  # # Misc.
+  # Misc.
   biblib = pkgs.callPackage ./pkgs/misc/biblib { };
   r2frida = pkgs.callPackage ./pkgs/misc/r2frida { };
   vimiv-qt = pkgs.callPackage ./pkgs/misc/vimiv-qt { };
