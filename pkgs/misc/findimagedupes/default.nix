@@ -1,47 +1,39 @@
 { lib
-, fetchFromGitHub
-, git
-, graphicsmagick
-, makeWrapper
-, perlPackages
+, buildGoModule
+, file
+, libjpeg
+, libpng
+, libtiff
 , stdenv
+, fetchFromGitLab
 }:
 
-stdenv.mkDerivation rec {
+buildGoModule rec {
   pname = "findimagedupes";
-  version = "2.19.1";
+  version = "246ed15b86eccbd73bc5cbf4e97dacf9807fa748";
 
-  src = fetchFromGitHub {
-    owner = "jhnc";
-    repo = "${pname}";
-    rev = "${version}";
-    sha256 = "19hchaxzzq7kwrcnm3m2zyigq38kdc9l0jp6pz6cm9hfxna58518";
+  src = fetchFromGitLab {
+    owner = "opennota";
+    repo = "findimagedupes";
+    rev = "246ed15b86eccbd73bc5cbf4e97dacf9807fa748";
+    sha256 = "1fqgw8mqx51wj75gsywanzfinpzz9nrjwm3g4q86h67pdnhhzr32";
   };
 
   meta = with lib; {
-    # TODO: findimagedupes.
     broken = true;
     description = "Find visually similar or duplicate images";
-    homepage = "https://github.com/jhnc/findimagedupes";
-    license = licenses.asl20;
+    homepage = "https://gitlab.com/opennota/findimagedupes";
+    license = licenses.gpl3Plus;
     maintainers = with maintainers; [ dschrempf ];
   };
 
-  nativeBuildInputs = with perlPackages; [ makeWrapper PodMarkdown ];
+  buildInputs = [ file libjpeg libpng libtiff ];
 
-  propagatedBuildInputs = with perlPackages; [ perl graphicsmagick ];
+  vendorSha256 = "1k9s8rmd742swvgpwzihvlaqbb47c5kxzgl7pmddlgl0aybdpjas";
 
-  preBuild = ''
-    sed -i -e "s:DIRECTORY => '/usr/local/lib/findimagedupes':DIRECTORY => '/tmp':" findimagedupes
-  '';
+  runVend = true;
 
-  buildPhase = "
-    pod2man findimagedupes > findimagedupes.1
-  ";
-
-  installPhase = ''
-    install -D -m 755 findimagedupes $out/bin/findimagedupes
-    wrapProgram $out/bin/findimagedupes --set PERL5LIB ${with perlPackages; makeFullPerlPath [ DBFile FileBaseDir FileMimeInfo InlineC ]}
-    install -D -m 644 findimagedupes.1 $out/share/man/man1/findimagedupes.1
-  '';
+  # nativeBuildInputs = [ ];
+  # buildInputs = [ ];
+  # propagatedBuildInputs = [ ];
 }
