@@ -31,18 +31,24 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ meson ninja perl pkg-config ];
   buildInputs = [ boost ];
 
-  # Use the configuration script provided by RevBayes.
-  configurePhase = ''
+  preConfigure = ''
+    ls -la
     (cd projects/meson/ ; ./generate.sh)
   '';
 
-  buildPhase = ''
-    meson --prefix=$out
-    ninja install
-  '';
+  # Use the configuration script provided by RevBayes.
+  # configurePhase = ''
+  #   (cd projects/meson/ ; ./generate.sh)
+  #   ls
+  # '';
 
-  installPhase = ''
-  '';
+  # buildPhase = ''
+  #   meson --prefix=$out
+  #   ninja install
+  # '';
+
+  # installPhase = ''
+  # '';
 
   meta = with lib; {
     description = "";
