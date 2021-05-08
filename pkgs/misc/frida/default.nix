@@ -8,7 +8,7 @@
 
 let
   pname = "frida";
-  version = "14.2.17";
+  version = "14.2.18";
   pythonVersion = "38";
 
   # TODO: Find a way to use fetchPypi.
@@ -39,7 +39,7 @@ python3.pkgs.buildPythonPackage rec {
 
   src = python3.pkgs.fetchPypi {
     inherit pname version;
-    sha256 = "sha256-J7uhY3539J2ZDy9L7f7IT6UYEzCfoe9xo1dlhJhMms4=";
+    sha256 = "sha256-8OQLiy7+wypUDCWbkj7mWnOmCFwfMNE5rfAchZq69Ho=";
   };
 
   egg = eggs.${stdenv.hostPlatform.system}
