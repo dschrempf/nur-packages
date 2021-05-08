@@ -25,7 +25,7 @@ let
         # add your system support here
         x86_64-linux = fetchurl {
           url = "${base}/${pname}-${version}-py${python3.pythonVersion}-linux-x86_64.egg";
-          sha256 = "0ckj3l0j5pi723bvkw7kmvcrigk1jahqic6lnzma62nppz4mj3my";
+          sha256 = "1qqj3wfrp0d4pzhg5qqrfbkigydpan49c1y003mk8jl5020k8krn";
         };
       };
 
