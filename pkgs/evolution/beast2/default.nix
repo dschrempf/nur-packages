@@ -41,7 +41,7 @@ stdenv.mkDerivation {
     makeWrapper ${jre8}/bin/java $out/bin/beast --add-flags "-cp $out/lib/launcher.jar beast.app.beastapp.BeastLauncher"
     # NOTE: Beauti does not work because it does not find the templates. See the
     # 'release/Linux/beast' directory.
-    # makeWrapper ${jre8}/bin/java $out/bin/beauti --add-flags "-cp $out/lib/launcher.jar beast.app.beauti.BeautiLauncher -capture"
+    makeWrapper ${jre8}/bin/java $out/bin/beauti --add-flags "-cp $out/lib/launcher.jar beast.app.beauti.BeautiLauncher -capture"
     makeWrapper ${jre8}/bin/java $out/bin/densitree --add-flags "-cp $out/lib/DensiTree.jar viz.DensiTree"
     makeWrapper ${jre8}/bin/java $out/bin/loganalyser --add-flags "-cp $out/lib/beast.jar beast.util.LogAnalyser"
     makeWrapper ${jre8}/bin/java $out/bin/logcombiner --add-flags "-cp $out/lib/launcher.jar beast.app.tools.LogCombinerLauncher"
