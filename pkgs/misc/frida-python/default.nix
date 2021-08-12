@@ -15,7 +15,7 @@ let
   eggs = {
     x86_64-linux = fetchurl {
       url = "${base}/${namePypi}-${version}-py${python3.pythonVersion}-linux-x86_64.egg";
-      sha256 = "sha256-az9CIlwiofFJEH+WOr6fe18y60kV/o+oKG5WV6e2x4k=";
+      sha256 = "sha256-fg7tEY1MmVEr/TC3eiD9tGcj7P+o872KRd5sAXFwnRk=";
     };
   };
 in
