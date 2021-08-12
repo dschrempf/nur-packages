@@ -8,7 +8,7 @@
 
 let
   pname = "frida-python";
-  version = "15.0.8";
+  version = "15.0.13";
   namePypi = "frida";
   pythonVersion = "38";
   base = "https://files.pythonhosted.org/packages/${python3.pythonVersion}/${builtins.substring 0 1 namePypi}/${namePypi}";
@@ -27,7 +27,7 @@ python3.pkgs.buildPythonPackage rec {
   src = python3.pkgs.fetchPypi {
     pname = namePypi;
     inherit version;
-    sha256 = "sha256-3i3ykkdwYBzjnNyZL6NpC0oIkdYUpRXK0DvBuU52L/E=";
+    sha256 = "sha256-wOra4E4db9HqAy3VGWdksHcN85rvaEqbv1k1kRtqC1Q=";
   };
 
   egg = eggs.${stdenv.hostPlatform.system}
