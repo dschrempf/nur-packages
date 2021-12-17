@@ -27,7 +27,7 @@ python3.pkgs.buildPythonPackage rec {
 
   nativeBuildInputs = with python3.pkgs; [ pytest-runner ];
   # buildInputs = [ ];
-  propagatedBuildInputs = [ requests ];
+  propagatedBuildInputs = with python3.pkgs; [ requests ];
 
   doCheck = false;
   pythonImportsCheck = [ pname ];
