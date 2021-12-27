@@ -27,9 +27,9 @@ python3.pkgs.buildPythonPackage rec {
   #   hash = "sha256-/HKZ+tCJLHnsssSSUlfdY3jo1OHCcZ27+wMB+0fYlNo=";
   # };
 
-  nativeBuildInputs = with python3.pkgs; [ aiodns aiohttp certifi cryptography requests yarl ];
+  nativeBuildInputs = with python3.pkgs; [ aiodns aiohttp certifi requests yarl ];
   # buildInputs = [ ];
-  # propagatedBuildInputs = [ ];
+  propagatedBuildInputs = with python3.pkgs; [ cryptography ];
 
   doCheck = false;
   pythonImportsCheck = [ pname ];
