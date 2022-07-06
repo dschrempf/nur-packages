@@ -8,11 +8,7 @@
 , zip
 }:
 
-# NOTE: The translations are installed to "$out/home/dominik/...", and are not
-# found by the executable.
-
-# NOTE: Other shared files such as the desktop file are installed to
-# "$out/usr/local/share/...", and are not found by the executable.
+# NOTE: The QT translation files are not found by the executable.
 
 # NOTE: Iaito reports a mismatch of the radare2 build and runtime versions. The
 # statement is wrong. The version string comparison fails somehow.
@@ -45,10 +41,17 @@ stdenv.mkDerivation rec {
 
   # Handle weird installation paths.
   preFixup = ''
-    rm -r $out/home
+    # Binary.
     mv $out/usr/local/bin $out/
+
+    # Misc.
     mv $out/usr/local/share $out/
-    rmdir $out/usr/local
-    rmdir $out/usr
+
+    # Translations.
+    mv $out/$out/share/iaito $out/share/
+
+    # Clean up.
+    (cd $out; rmdir -p usr/local)
+    (cd $out; rmdir -p ''${out#/}/share)
   '';
 }
