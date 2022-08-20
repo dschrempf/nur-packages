@@ -16,7 +16,7 @@ stdenv.mkDerivation rec {
     repo = pname;
     rev = "v${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-LqaHoGixHjLrjtrJlCDqh9UkrGUSAiK7STL/Yyc7cZQ=";
+    hash = "sha256-LqaHoGixHjLrjtrJlCDqh9UkrGUSAiK7STL/Yyc7cZQ=";
   };
 
   nativeBuildInputs = [ cmake ];

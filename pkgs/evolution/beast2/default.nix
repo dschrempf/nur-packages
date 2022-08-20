@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
     owner = "CompEvol";
     repo = pname;
     rev = "v${version}";
-    sha256 = "sha256-2xIrqCaQD5h/QhUDkRUpf82BRlgaPLdAr23o0lMgBTU=";
+    hash = "sha256-2xIrqCaQD5h/QhUDkRUpf82BRlgaPLdAr23o0lMgBTU=";
   };
 
   nativeBuildInputs = [ ant jdk8 makeWrapper ];

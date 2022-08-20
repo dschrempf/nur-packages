@@ -15,7 +15,7 @@ stdenv.mkDerivation {
     owner = "beast-dev";
     repo = "beast-mcmc";
     rev = "sars-cov-2-origins";
-    sha256 = "sha256-RvJy3TZPdXV+c8L5rULnWnbaAjBTQKoWLcOFU8drSis=";
+    hash = "sha256-RvJy3TZPdXV+c8L5rULnWnbaAjBTQKoWLcOFU8drSis=";
   };
 
   nativeBuildInputs = [ ant jdk8 makeWrapper ];
