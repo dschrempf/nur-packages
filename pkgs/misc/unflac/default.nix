@@ -23,14 +23,14 @@ buildGoModule rec {
       --prefix PATH : ${lib.getBin ffmpeg}/bin
   '';
 
+  nativeBuildInputs = [ makeWrapper ];
+  # buildInputs = [];
+  # propagatedBuildInputs = [ ];
+
   meta = with lib; {
     description = "A command line tool for fast frame accurate audio image + cue sheet splitting";
     homepage = "https://git.sr.ht/~ft/unflac";
     license = licenses.mit;
     maintainers = with maintainers; [ dschrempf ];
   };
-
-  nativeBuildInputs = [ makeWrapper ];
-  # buildInputs = [];
-  # propagatedBuildInputs = [ ];
 }
