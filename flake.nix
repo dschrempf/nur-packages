@@ -5,7 +5,10 @@
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = { self, flake-utils, nixpkgs }:
+  inputs.please.url = "github:TNG/please-cli";
+  inputs.please.inputs.nixpkgs.follows = "nixpkgs";
+
+  outputs = { self, flake-utils, nixpkgs, please }:
     {
       overlay = final: prev: {
         dschrempf = self.packages.${final.system};
@@ -18,7 +21,7 @@
           pkgs = nixpkgs.legacyPackages.${system};
         in
         {
-          packages = import ./default.nix { inherit pkgs; inherit system; };
+          packages = import ./default.nix { inherit pkgs; please-flake = please; inherit system; };
         }
       );
 }
