@@ -60,11 +60,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1711092472,
-        "narHash": "sha256-9wKza+rEA4MMwm9OUWsWAAsEqonj2JypPkcnd82+rw0=",
+        "lastModified": 1715007867,
+        "narHash": "sha256-TbUV7O5HlFS+/czctq0k7Wb+3WVOrE65Vg7QgVM6flU=",
         "owner": "TNG",
         "repo": "please-cli",
-        "rev": "92a2c4fd7465d3e42ec68836fd880ccdd0aead13",
+        "rev": "652cbe30b087e45bd781c3493d5c3d76d6af6c24",
         "type": "github"
       },
       "original": {
