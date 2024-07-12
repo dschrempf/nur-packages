@@ -1,8 +1,9 @@
-{ lib
-, buildGoModule
-, fetchFromSourcehut
-, ffmpeg
-, makeWrapper
+{
+  lib,
+  buildGoModule,
+  fetchFromSourcehut,
+  ffmpeg,
+  makeWrapper,
 }:
 
 buildGoModule rec {

@@ -1,10 +1,11 @@
 # This is largely taken from the NUR package of genesis, see
 # https://github.com/nix-community/nur-combined/blob/master/repos/genesis/pkgs/frida-tools/default.nix.
-{ lib
-, stdenv
-, fetchurl
-, python3
-, system
+{
+  lib,
+  stdenv,
+  fetchurl,
+  python3,
+  system,
 }:
 
 let
@@ -12,16 +13,17 @@ let
   version = "15.1.24";
   namePypi = "frida";
   pythonVersion = "38";
-  base = "https://files.pythonhosted.org/packages/${python3.pythonVersion}/${builtins.substring 0 1 namePypi}/${namePypi}";
+  base = "https://files.pythonhosted.org/packages/${python3.pythonVersion}/${
+    builtins.substring 0 1 namePypi
+  }/${namePypi}";
   egg =
-    if system == "x86_64-linux"
-    then
-      fetchurl
-        {
-          url = "${base}/${namePypi}-${version}-py${python3.pythonVersion}-linux-x86_64.egg";
-          hash = "sha256-Ze8scGvlaRLvzEER3TyzMw2sqXcJLO54LI0jsyOIuCs=";
-        }
-    else throw "unsupported system: ${stdenv.hostPlatform.system}";
+    if system == "x86_64-linux" then
+      fetchurl {
+        url = "${base}/${namePypi}-${version}-py${python3.pythonVersion}-linux-x86_64.egg";
+        hash = "sha256-Ze8scGvlaRLvzEER3TyzMw2sqXcJLO54LI0jsyOIuCs=";
+      }
+    else
+      throw "unsupported system: ${stdenv.hostPlatform.system}";
 in
 python3.pkgs.buildPythonPackage rec {
   inherit pname version;

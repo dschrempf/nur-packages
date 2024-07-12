@@ -1,6 +1,11 @@
 # This is largely taken from the NUR package of genesis, see
 # https://github.com/nix-community/nur-combined/blob/master/repos/genesis/pkgs/frida-tools/default.nix.
-{ lib, python3, frida-python, fetchFromGitHub }:
+{
+  lib,
+  python3,
+  frida-python,
+  fetchFromGitHub,
+}:
 
 python3.pkgs.buildPythonApplication rec {
   pname = "frida-tools";

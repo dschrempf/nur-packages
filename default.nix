@@ -1,6 +1,7 @@
-{ system
-, pkgs
-, please-flake
+{
+  system,
+  pkgs,
+  please-flake,
 }:
 
 rec {
@@ -24,9 +25,7 @@ rec {
   tiingo = pkgs.callPackage ./pkgs/finance/tiingo { };
 
   # Hacking.
-  frida-python = pkgs.callPackage ./pkgs/hacking/frida-python {
-    python3 = pkgs.python38;
-  };
+  frida-python = pkgs.callPackage ./pkgs/hacking/frida-python { python3 = pkgs.python38; };
   frida-tools = pkgs.callPackage ./pkgs/hacking/frida-tools {
     python3 = pkgs.python38;
     inherit frida-python;
