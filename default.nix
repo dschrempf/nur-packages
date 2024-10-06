@@ -32,6 +32,11 @@ rec {
   };
   iaito = pkgs.libsForQt5.callPackage ./pkgs/hacking/iaito { };
 
+  # Media.
+  mtplayer = pkgs.callPackage ./pkgs/media/mtplayer {
+    jre = (pkgs.jre.override { enableJavaFX = true; });
+  };
+
   # Misc.
   biblib = pkgs.callPackage ./pkgs/misc/biblib { };
   jugglinglab = pkgs.callPackage ./pkgs/misc/jugglinglab { };
