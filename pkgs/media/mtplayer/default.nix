@@ -1,11 +1,13 @@
 {
+  # Build.
+  fetchzip,
   lib,
   stdenv,
-  # fetchFromGitHub,
-  fetchzip,
-  jre,
-  # gradle,
   writeShellScriptBin,
+  # Dependencies.
+  ffmpeg,
+  jre,
+  vlc,
 }:
 
 let
@@ -46,7 +48,11 @@ let
     };
 
     # nativeBuildInputs = [ gradle ];
-    buildInputs = [ jre ];
+    buildInputs = [
+      jre
+      vlc
+      ffmpeg
+    ];
     # propagatedBuildInputs = [ ];
   });
 in
