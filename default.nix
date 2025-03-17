@@ -1,7 +1,6 @@
 {
   system,
   pkgs,
-  please-flake,
 }:
 
 rec {
@@ -40,7 +39,6 @@ rec {
   # Misc.
   biblib = pkgs.callPackage ./pkgs/misc/biblib { };
   jugglinglab = pkgs.callPackage ./pkgs/misc/jugglinglab { };
-  please = please-flake.packages.${system}.please;
   signal-back = pkgs.callPackage ./pkgs/misc/signal-back { };
   unflac = pkgs.callPackage ./pkgs/misc/unflac { };
 }
