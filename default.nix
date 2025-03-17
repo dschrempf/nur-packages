@@ -1,6 +1,5 @@
 {
-  system,
-  pkgs,
+  pkgs ? import <nixpkgs> { },
 }:
 
 rec {

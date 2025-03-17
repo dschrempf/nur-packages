@@ -22,7 +22,6 @@
       {
         packages = import ./default.nix {
           inherit pkgs;
-          inherit system;
         };
       }
     );
