@@ -34,5 +34,4 @@ rec {
   biblib = pkgs.callPackage ./pkgs/misc/biblib { };
   jugglinglab = pkgs.callPackage ./pkgs/misc/jugglinglab { };
   signal-back = pkgs.callPackage ./pkgs/misc/signal-back { };
-  unflac = pkgs.callPackage ./pkgs/misc/unflac { };
 }
