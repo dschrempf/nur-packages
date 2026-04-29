@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
   schedule:
     # Rebuild everyday at 3:32
     - cron: "32 3 * * *"
